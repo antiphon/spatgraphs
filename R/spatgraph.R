@@ -30,6 +30,7 @@
 #' Voronoi diagram aka Delaunay triangulation is not supported as other R-packages can do it, see. e.g. \link{deldir}.
 #'
 #' @useDynLib spatgraphs2
+#' @import Rcpp
 #' @export
 
 spatgraph <- function(x, type="geometric", par=NULL, verbose = TRUE,

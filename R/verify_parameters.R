@@ -20,42 +20,44 @@ sg_verify_parameters <- function(coord, type, par, maxR, doDists, preGraph) {
            )
 
   # check par
-  par_should_be <- unlist( SG_GRAPH_PARAMETERS[[i]] )
-
-  if(length(par) & length(par_should_be)==0) stop(paste0("'", type, "' does not take parameters."))
   ####################################################################
   # graphs with some parameters
   #
   # special cases with marks:
-  marked_ok <-  TRUE
+  par_ok <-  TRUE
   if(i %in% c(3,4)) { # mass geometric or mark cross
     if(!is.numeric(par) | length(par) != nrow(x)){
       par_should_be <- c(marks=paste0("vector of length ", nrow(x),  " for the marks"))
-      marked_ok <- FALSE
+      par_ok <- FALSE
     }
   }
   # RST needs coordinates
-  if(i == 8) {
+  else if(i == 8) {
     if(!is.numeric(par) | length(par) != ncol(x)){
       par_should_be <- paste0("vector of length ", ncol(x),  " for the center point coordinates.")
-      marked_ok <- FALSE
+      par_ok <- FALSE
     }
   }
   # CCC
-  if(i==10){
+  else if(i==10){
     if( !is.factor(par) | length(par) != nrow(x)){
       par_should_be <- paste0("vector of length ", nrow(x),  " for the center point coordinates.")
-      marked_ok <- FALSE
+      par_ok <- FALSE
     }
     else{
       par <- as.integer(par)
     }
   }
+  else{
+    ################
+    # no marks
+    par_should_be <- unlist( SG_GRAPH_PARAMETERS[[i]] )
+    par_ok <- length(par) == length(par_should_be)
+    if(length(par) & length(par_should_be)==0) stop(paste0("'", type, "' does not take parameters."))
+  }
 
-
-  ################
-  # no marks
-  if(length(par)!=length(par_should_be) | !marked_ok)
+  ###############
+  if(!par_ok)
     stop(paste("'",type,"' graph needs par=",
           paste(par_should_be, collapse=","),sep="")
   )
