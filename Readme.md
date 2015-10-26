@@ -23,4 +23,9 @@ The commonly used r-neighbourhood is the neighbourhood structure of a graph know
 
 ## New version (3.*)
 
-Complete rewrite of the package, reducing complexity of the C-side representation of the point pattern. Result is faster and lighter.
+Complete rewrite of the package, reducing complexity of the C-side representation of the point pattern. Result is faster and lighter. 
+
+Input handling has changed, now you can feed the point patterns in as pretty much any format.
+
+Parameter handling is changed (to accommodate pattern input flexibility), make note!
+

@@ -1,0 +1,5 @@
+spatgraphs 3.0 (26.10.2015)
+=======================
+  * complete rewrite
+  * Input format has changed
+  * still some rarer features from old version (2.*) missing
