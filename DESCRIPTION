@@ -1,8 +1,8 @@
-Package: spatgraphs2
+Package: spatgraphs
 Type: Package
 Title: Graph Edge Computations for Spatial Point Patterns
 Version: 3.0
-Date: 2015-10-23
+Date: 2015-10-26
 Author: Tuomas Rajala
 Maintainer: Tuomas Rajala <tuomas.rajala@iki.fi>
 Description: Graphs (or networks) and graph component
