@@ -7,6 +7,7 @@
 #'
 #' Removes edges with length > R.
 #'
+#'
 #' @export
 
 cut.sg <- function(x, data, R, ...) {

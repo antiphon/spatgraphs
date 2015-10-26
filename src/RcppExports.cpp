@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // cut_c
 List cut_c(List edges, NumericMatrix coord, double R);
-RcppExport SEXP spatgraphs2_cut_c(SEXP edgesSEXP, SEXP coordSEXP, SEXP RSEXP) {
+RcppExport SEXP spatgraphs_cut_c(SEXP edgesSEXP, SEXP coordSEXP, SEXP RSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
@@ -20,7 +20,7 @@ END_RCPP
 }
 // prune_c
 List prune_c(List edges, int level, int verbose);
-RcppExport SEXP spatgraphs2_prune_c(SEXP edgesSEXP, SEXP levelSEXP, SEXP verboseSEXP) {
+RcppExport SEXP spatgraphs_prune_c(SEXP edgesSEXP, SEXP levelSEXP, SEXP verboseSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
@@ -33,7 +33,7 @@ END_RCPP
 }
 // spatcluster_c
 List spatcluster_c(List x, int verbose);
-RcppExport SEXP spatgraphs2_spatcluster_c(SEXP xSEXP, SEXP verboseSEXP) {
+RcppExport SEXP spatgraphs_spatcluster_c(SEXP xSEXP, SEXP verboseSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
@@ -45,7 +45,7 @@ END_RCPP
 }
 // spatgraph_c
 List spatgraph_c(NumericMatrix coord, int type, NumericVector parameters, double maxR, List preGraph, int verbose);
-RcppExport SEXP spatgraphs2_spatgraph_c(SEXP coordSEXP, SEXP typeSEXP, SEXP parametersSEXP, SEXP maxRSEXP, SEXP preGraphSEXP, SEXP verboseSEXP) {
+RcppExport SEXP spatgraphs_spatgraph_c(SEXP coordSEXP, SEXP typeSEXP, SEXP parametersSEXP, SEXP maxRSEXP, SEXP preGraphSEXP, SEXP verboseSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;

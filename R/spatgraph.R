@@ -44,7 +44,7 @@
 #' gb <- spatgraph(xb, "SIG", maxR=0.1)
 #'
 #'
-#' @useDynLib spatgraphs2
+#' @useDynLib spatgraphs
 #' @import Rcpp
 #' @export
 
