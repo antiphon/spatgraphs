@@ -5,7 +5,8 @@
 \title{Plot a spatial graph}
 \usage{
 \method{plot}{sg}(x, data, which = NULL, add = FALSE, addPoints = FALSE,
-  points.pch = 1, points.col = 1, points.cex = 1, ...)
+  points.pch = 1, points.col = 1, points.cex = 1, max.edges = 10000,
+  ...)
 }
 \arguments{
 \item{x}{an 'sg' graph object}
@@ -23,6 +24,8 @@
 \item{points.col}{point styling}
 
 \item{points.cex}{point styling}
+
+\item{max.edges}{limit of edges to try to plot, gets very slow at high count. default 1e4}
 
 \item{...}{passed to 'lines' function}
 }
