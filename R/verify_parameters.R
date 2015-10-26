@@ -63,6 +63,11 @@ sg_verify_parameters <- function(coord, type, par, maxR, doDists, preGraph) {
   )
   # check maxR
   if(maxR<0) stop("'maxR' < 0 given.")
+  if(maxR>0){
+    # not all support pre-R
+    Rsup <- c(2,9)
+    if(! i %in% Rsup) stop("Graphs that at the moment support maxR: ", paste0(names(SG_GRAPH_PARAMETERS)[Rsup], collapse=", "))
+  }
   # check preGraph
   if(!is.null(preGraph)){
     if(!is(preGraph, "sg")) stop("preGraph not of class 'sg'.")
