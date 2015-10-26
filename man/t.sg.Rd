@@ -4,7 +4,7 @@
 \alias{t.sg}
 \title{Transpose sg object}
 \usage{
-t.sg(x)
+\method{t}{sg}(x)
 }
 \arguments{
 \item{x}{sg-object.}

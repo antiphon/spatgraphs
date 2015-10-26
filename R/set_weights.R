@@ -6,6 +6,7 @@
 #' @param x point pattern used in g
 #' @param f function for the weight
 #' @param scale additional scale parameter for the default f
+#' @param ... ignored
 #'
 #' @details
 #' Default f(x) = exp(-x^2/scale)

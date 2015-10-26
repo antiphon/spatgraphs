@@ -1,21 +1,28 @@
 #' Creator for sgc
 #'
+#' @param clusters list of clusters as point indices
+#' @param type type
+#' @param pars parameters
+#' @param note notes
+#'
 #' @export
-as.sgc<-function(edges, type="?",pars=NULL,note=NULL)
+as.sgc<-function(clusters, type="?",pars=NULL,note=NULL)
 {
-  e <- as.sg(edges,type,pars)
+  e <- as.sg(clusters, type, pars, note)
   e$parameters<-pars
-  e$nclusters<-length(edges)
-  e$N<-max(unlist(lapply(edges,max)))
-  names(e)[1]<-"clusters"
-  class(e)<-"sgc"
-  if(!is.null(note))e$note<-note
+  e$nclusters<-length(clusters)
+  e$N<-max(unlist(lapply(clusters, max)))
+  names(e)[1] <- "clusters"
+  class(e) <- "sgc"
+  if(!is.null(note)) e$note <- note
   e
 }
 ###############################################################################
 #' sgc print method
 #'
-#' @exportMethod print
+#' @param x sgc object
+#' @param ... ignored
+#'
 #' @export
 print.sgc<-function(x,...)
 {
@@ -31,7 +38,9 @@ print.sgc<-function(x,...)
 #####################################################################################
 #' sgc summary
 #'
-#' @exportMethod summary
+#' @param object sgc object
+#' @param ... ignored
+#'
 #' @export
 summary.sgc<-function(object, ...)
 {

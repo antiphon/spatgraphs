@@ -4,7 +4,14 @@
 \alias{prune.sg}
 \title{Prune a graph}
 \usage{
-prune.sg(g, level = 1, verbose = TRUE)
+prune.sg(g, level = 1, verbose = FALSE)
+}
+\arguments{
+\item{g}{sg object}
+
+\item{level}{pruning level}
+
+\item{verbose}{verbosity}
 }
 \description{
 Prune a graph

@@ -6,6 +6,13 @@
 \usage{
 edgeLengths(g, x, ...)
 }
+\arguments{
+\item{g}{sg-object}
+
+\item{x}{point pattern}
+
+\item{...}{ignored}
+}
 \description{
 Edge lengths
 }

@@ -4,7 +4,12 @@
 \alias{summary.sgc}
 \title{sgc summary}
 \usage{
-summary.sgc(object, ...)
+\method{summary}{sgc}(object, ...)
+}
+\arguments{
+\item{object}{sgc object}
+
+\item{...}{ignored}
 }
 \description{
 sgc summary

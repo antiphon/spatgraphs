@@ -7,6 +7,11 @@ wrapper for 1way and 2way symmetrisation}
 \usage{
 sg2sym(x, way = 1)
 }
+\arguments{
+\item{x}{sg object}
+
+\item{way}{1: OR rule, 2: AND rule for keeping edges.}
+}
 \description{
 Symmetrisation of sg adjacency matrix
 wrapper for 1way and 2way symmetrisation

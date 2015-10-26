@@ -4,13 +4,13 @@
 \alias{plot.sg}
 \title{Plot a spatial graph}
 \usage{
-\method{plot}{sg}(g, x, which = NULL, add = FALSE, addPoints = FALSE,
+\method{plot}{sg}(x, data, which = NULL, add = FALSE, addPoints = FALSE,
   points.pch = 1, points.col = 1, points.cex = 1, ...)
 }
 \arguments{
-\item{g}{an 'sg' graph object}
+\item{x}{an 'sg' graph object}
 
-\item{x}{The point pattern object, same as for computing the 'g'}
+\item{data}{The point pattern object, same as for computing the 'g'}
 
 \item{which}{Indices of which out-edges to plot. Default: all}
 
@@ -22,9 +22,9 @@
 
 \item{points.col}{point styling}
 
-\item{...}{passed to 'lines' function}
+\item{points.cex}{point styling}
 
-\item{ponits.cex}{point styling}
+\item{...}{passed to 'lines' function}
 }
 \description{
 Rudimentary plotting.

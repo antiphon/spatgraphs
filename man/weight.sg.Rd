@@ -14,6 +14,8 @@ weight.sg(g, x, f = function(x) exp(-x^2/scale), scale = 1, ...)
 \item{f}{function for the weight}
 
 \item{scale}{additional scale parameter for the default f}
+
+\item{...}{ignored}
 }
 \description{
 For each edge e(i,j) between points i,j, set the weight f(||x_i-x_j||)

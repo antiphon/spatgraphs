@@ -1,5 +1,12 @@
 #' Prune a graph
-prune.sg<-function(g, level=1, verbose=TRUE) {
+#'
+#' @param g sg object
+#' @param level pruning level
+#' @param verbose verbosity
+#'
+#' @export
+
+prune.sg<-function(g, level=1, verbose=FALSE) {
   if(!is(g,"sg")) stop("g not sg object.")
   if(is.null(level)) return(g)
   if(level<=0)return(g)

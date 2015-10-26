@@ -13,7 +13,7 @@ spatcluster_c <- function(x, verbose) {
     .Call('spatgraphs2_spatcluster_c', PACKAGE = 'spatgraphs2', x, verbose)
 }
 
-spatgraph_c <- function(coord, type, parameters, verbose) {
-    .Call('spatgraphs2_spatgraph_c', PACKAGE = 'spatgraphs2', coord, type, parameters, verbose)
+spatgraph_c <- function(coord, type, parameters, maxR, preGraph, verbose) {
+    .Call('spatgraphs2_spatgraph_c', PACKAGE = 'spatgraphs2', coord, type, parameters, maxR, preGraph, verbose)
 }
 

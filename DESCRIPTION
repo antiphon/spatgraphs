@@ -1,16 +1,15 @@
 Package: spatgraphs2
 Type: Package
-Title: Graph or network link computer for spatial point patterns
-Version: 3.00
+Title: Graph Edge Computations for Spatial Point Patterns
+Version: 3.0
 Date: 2015-10-23
 Author: Tuomas Rajala
 Maintainer: Tuomas Rajala <tuomas.rajala@iki.fi>
-Suggests: Matrix, igraph, rgl
 Description: Graphs (or networks) and graph component
-        calculations for spatial locations in *D or on the sphere.
+        calculations for spatial locations in *D.
 License: GPL (>= 2)
 LazyData: TRUE
 Imports:
-    Rcpp (>= 0.11.6)
+    Rcpp (>= 0.11.6), Matrix, rgl
 LinkingTo:
     Rcpp

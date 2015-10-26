@@ -6,7 +6,6 @@
 #'
 #' @param x sg-object.
 #'
-#' @exportMethod t
 #' @export
 
 t.sg<-function(x)
@@ -22,7 +21,8 @@ t.sg<-function(x)
 #'
 #' This will transpose the adjacency matrix underlying the graph.
 #'
-#' @exportMethod t
+#' @param x sgadj object
+#'
 #' @export
 
 t.sgadj<-function(x)
@@ -35,6 +35,9 @@ t.sgadj<-function(x)
 ###################################################################
 #' Symmetrisation of sg adjacency matrix
 #' wrapper for 1way and 2way symmetrisation
+#'
+#' @param x sg object
+#' @param way 1: OR rule, 2: AND rule for keeping edges.
 #'
 #' @export
 sg2sym<-function(x, way=1)
@@ -157,11 +160,9 @@ as.sgadj<-function(edges=NULL,type="?",pars=NULL, other="")
 #' @param x sgadj object
 #' @param ... ignored
 #'
-#' @exportMethod print
 #' @export
 print.sgadj<-function(x,...)
 {
-  par_should_be<-unlist(SG_GRAPH_PARS[which(x$type==SG_SUPPORTED_GRAPHS)])
   nam<-names(x$parameters)
   p<-"?"
 
@@ -176,11 +177,13 @@ print.sgadj<-function(x,...)
 ##############################################################################
 #' plot sgadj
 #'
+#' @param x sgadj object
+#' @param ... passed to plot.sg
+#'
 #' converts to sg and plots that.
 #'
-#' @exportMethod plot
 #' @export
-plot.sgadj<-function(x,...)
+plot.sgadj<-function(x, ...)
 {
   plot.sg(adj2sg(x),...)
 }

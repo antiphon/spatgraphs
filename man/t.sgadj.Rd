@@ -4,7 +4,10 @@
 \alias{t.sgadj}
 \title{Transpose sgadj object}
 \usage{
-t.sgadj(x)
+\method{t}{sgadj}(x)
+}
+\arguments{
+\item{x}{sgadj object}
 }
 \description{
 This will transpose the adjacency matrix underlying the graph.

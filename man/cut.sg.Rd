@@ -4,7 +4,18 @@
 \alias{cut.sg}
 \title{cut edges}
 \usage{
-\method{cut}{sg}(g, x, R)
+\method{cut}{sg}(x, data, R, ...)
+}
+\arguments{
+\item{x}{sg graph object}
+
+\item{data}{point pattern used for computing g}
+
+\item{R}{cutting length}
+
+\item{...}{ignored
+
+Removes edges with length > R.}
 }
 \description{
 cut edges

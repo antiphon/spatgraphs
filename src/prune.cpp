@@ -7,7 +7,7 @@ List prune_c(List edges, int level, int verbose) {
 
   std::vector< std::vector<int> > nodelist;
   int dbg = verbose;
-  int i, j, leaf, count=0, prev, next;
+  int i, leaf, count=0, prev, next;
   std::vector<int> left;
   std::vector<int> branch, *pnode;
   left.resize(0);

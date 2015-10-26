@@ -6,6 +6,9 @@
 \usage{
 is_sg(x)
 }
+\arguments{
+\item{x}{object to check}
+}
 \description{
 verify class sg
 }

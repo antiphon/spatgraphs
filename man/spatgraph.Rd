@@ -4,7 +4,7 @@
 \alias{spatgraph}
 \title{Compute the edges of a spatial graph}
 \usage{
-spatgraph(x, type = "geometric", par = NULL, verbose = TRUE, maxR = 0,
+spatgraph(x, type = "geometric", par = NULL, verbose = FALSE, maxR = 0,
   doDists = FALSE, preGraph = NULL)
 }
 \arguments{
@@ -42,6 +42,20 @@ Several edge definitions are supported:
 
 }
 
-Voronoi diagram aka Delaunay triangulation is not supported as other R-packages can do it, see. e.g. \link{deldir}.
+The parameter 'maxR' can be given to bring n^3 graphs closer to n^2. k-nearest neighbours will warn if
+maxR is too small (<k neighbours for some points), others, like RNG, don't so be careful.
+
+Voronoi diagram aka Delaunay triangulation is not supported as other R-packages can do it,
+see. e.g. package 'deldir'.
+}
+\examples{
+# basic example
+x <- matrix(runif(50*2), ncol=2)
+g <- spatgraph(x, "knn", par=3)
+plot(g, x)
+
+# big example
+xb <- matrix(runif(10000*2), ncol=2)
+gb <- spatgraph(xb, "SIG", maxR=0.1)
 }
 

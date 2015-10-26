@@ -4,16 +4,20 @@
 \alias{plot.sgc}
 \title{plot clusters}
 \usage{
-\method{plot}{sgc}(gc, x, atleast = 2, add = FALSE, col, ...)
+\method{plot}{sgc}(x, data, atleast = 2, add = FALSE, col, ...)
 }
 \arguments{
-\item{gc}{cluster object}
+\item{x}{spatcluster-cluster object}
 
-\item{x}{point pattern object used for computing the graph}
+\item{data}{point pattern object used for computing the graph}
 
 \item{atleast}{plot only cluster with 'atleast' points in them}
 
 \item{add}{add or plot new}
+
+\item{col}{colors for clusters, chosen randomly if missing.}
+
+\item{...}{passed to points}
 }
 \description{
 plot clusters

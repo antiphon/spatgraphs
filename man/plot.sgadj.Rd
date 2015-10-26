@@ -6,7 +6,14 @@
 \usage{
 \method{plot}{sgadj}(x, ...)
 }
+\arguments{
+\item{x}{sgadj object}
+
+\item{...}{passed to plot.sg
+
+converts to sg and plots that.}
+}
 \description{
-converts to sg and plots that.
+plot sgadj
 }
 

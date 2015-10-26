@@ -9,13 +9,15 @@ using namespace Rcpp;
 
 class Graph {
   int dbg;
+  double maxR;
+  bool edges_set;
   Pp *pp; //the point pattern
   std::vector<std::vector<int> > edges; // the edges
   NumericVector par;
   int type;
 
 public:
-  Graph(Pp pp, int type, NumericVector parameters);
+  Graph(Pp pp, int type, NumericVector parameters, double);
   virtual ~Graph();
 
 
@@ -28,6 +30,7 @@ public:
   void sg_geometric();
   void sg_geometric(double );
   void sg_knn();
+  void sg_sub_knn();
   void sg_mass_geometric();
   void sg_markcross();
   void sg_gabriel();
@@ -35,8 +38,10 @@ public:
   void sg_SIG();
   void sg_RST();
   void sg_RNG();
+  void sg_sub_RNG();
   void sg_CCC();
 
+  void set_edges(List);
   void remove_duplicates();
 
   List toList();

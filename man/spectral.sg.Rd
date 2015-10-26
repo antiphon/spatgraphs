@@ -4,7 +4,7 @@
 \alias{spectral.sg}
 \title{spectral clustering}
 \usage{
-spectral.sg(g, m = 2, K = 3, ...)
+spectral.sg(g, m = 2, K = 3)
 }
 \arguments{
 \item{g}{sg object. Should be weighted (with weight.sg-function)}

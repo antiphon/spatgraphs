@@ -1,5 +1,10 @@
 #' Class creator
 #'
+#' @param edges list of neighbourhoods
+#' @param type type
+#' @param pars parameters
+#' @param note notes
+#'
 #' @export
 
 as.sg <- function(edges=list(), type="?", pars=NULL, note=NULL) {
@@ -16,6 +21,8 @@ as.sg <- function(edges=list(), type="?", pars=NULL, note=NULL) {
 
 #' verify class sg
 #'
+#' @param x object to check
+#'
 #' @export
 is_sg <- function(x) if(!is(x,"sg")) stop("input not of class 'sg'.")
 
@@ -23,9 +30,12 @@ is_sg <- function(x) if(!is(x,"sg")) stop("input not of class 'sg'.")
 ###############################################################################
 #' print method for sg
 #'
-#' @exportMethod print
+#' @param x sg object
+#' @param ... ignored
+#'
 #' @export
-print.sg<-function(x,...)
+
+print.sg<-function(x, ...)
 {
   nam <- names(x$parameters)
   p<-"?"
@@ -43,7 +53,9 @@ print.sg<-function(x,...)
 ###############################################################################
 #' sg summary
 #'
-#' @exportMethod summary
+#' @param object sg object
+#' @param ... ignored
+#'
 #' @export
 summary.sg<-function(object, ...)
 {

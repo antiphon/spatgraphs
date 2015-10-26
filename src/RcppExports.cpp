@@ -44,16 +44,18 @@ BEGIN_RCPP
 END_RCPP
 }
 // spatgraph_c
-List spatgraph_c(NumericMatrix coord, int type, NumericVector parameters, int verbose);
-RcppExport SEXP spatgraphs2_spatgraph_c(SEXP coordSEXP, SEXP typeSEXP, SEXP parametersSEXP, SEXP verboseSEXP) {
+List spatgraph_c(NumericMatrix coord, int type, NumericVector parameters, double maxR, List preGraph, int verbose);
+RcppExport SEXP spatgraphs2_spatgraph_c(SEXP coordSEXP, SEXP typeSEXP, SEXP parametersSEXP, SEXP maxRSEXP, SEXP preGraphSEXP, SEXP verboseSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
     Rcpp::traits::input_parameter< NumericMatrix >::type coord(coordSEXP);
     Rcpp::traits::input_parameter< int >::type type(typeSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type parameters(parametersSEXP);
+    Rcpp::traits::input_parameter< double >::type maxR(maxRSEXP);
+    Rcpp::traits::input_parameter< List >::type preGraph(preGraphSEXP);
     Rcpp::traits::input_parameter< int >::type verbose(verboseSEXP);
-    __result = Rcpp::wrap(spatgraph_c(coord, type, parameters, verbose));
+    __result = Rcpp::wrap(spatgraph_c(coord, type, parameters, maxR, preGraph, verbose));
     return __result;
 END_RCPP
 }

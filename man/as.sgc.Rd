@@ -4,7 +4,16 @@
 \alias{as.sgc}
 \title{Creator for sgc}
 \usage{
-as.sgc(edges, type = "?", pars = NULL, note = NULL)
+as.sgc(clusters, type = "?", pars = NULL, note = NULL)
+}
+\arguments{
+\item{clusters}{list of clusters as point indices}
+
+\item{type}{type}
+
+\item{pars}{parameters}
+
+\item{note}{notes}
 }
 \description{
 Creator for sgc

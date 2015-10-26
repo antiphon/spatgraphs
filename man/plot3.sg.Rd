@@ -4,12 +4,12 @@
 \alias{plot3.sg}
 \title{Plot 3d graph}
 \usage{
-plot3.sg(g, x, which, ...)
+plot3.sg(x, data, which, ...)
 }
 \arguments{
-\item{g}{sg object}
+\item{x}{sg object}
 
-\item{x}{coordinates}
+\item{data}{coordinates}
 
 \item{which}{points of which out-edges will be plotted}
 

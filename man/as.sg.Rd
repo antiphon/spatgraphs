@@ -6,6 +6,15 @@
 \usage{
 as.sg(edges = list(), type = "?", pars = NULL, note = NULL)
 }
+\arguments{
+\item{edges}{list of neighbourhoods}
+
+\item{type}{type}
+
+\item{pars}{parameters}
+
+\item{note}{notes}
+}
 \description{
 Class creator
 }

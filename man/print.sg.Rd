@@ -4,7 +4,12 @@
 \alias{print.sg}
 \title{print method for sg}
 \usage{
-print.sg(x, ...)
+\method{print}{sg}(x, ...)
+}
+\arguments{
+\item{x}{sg object}
+
+\item{...}{ignored}
 }
 \description{
 print method for sg

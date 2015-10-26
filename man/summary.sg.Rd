@@ -4,7 +4,12 @@
 \alias{summary.sg}
 \title{sg summary}
 \usage{
-summary.sg(object, ...)
+\method{summary}{sg}(object, ...)
+}
+\arguments{
+\item{object}{sg object}
+
+\item{...}{ignored}
 }
 \description{
 sg summary

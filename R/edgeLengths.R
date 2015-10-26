@@ -1,5 +1,10 @@
 #' Edge lengths
 #'
+#'
+#' @param g sg-object
+#' @param x point pattern
+#' @param ... ignored
+
 #' @export
 
 edgeLengths<-function(g, x, ...)

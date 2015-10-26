@@ -27,13 +27,28 @@
 #'
 #' }
 #'
-#' Voronoi diagram aka Delaunay triangulation is not supported as other R-packages can do it, see. e.g. \link{deldir}.
+#' The parameter 'maxR' can be given to bring n^3 graphs closer to n^2. k-nearest neighbours will warn if
+#' maxR is too small (<k neighbours for some points), others, like RNG, don't so be careful.
+#'
+#' Voronoi diagram aka Delaunay triangulation is not supported as other R-packages can do it,
+#' see. e.g. package 'deldir'.
+#'
+#' @examples
+#' # basic example
+#' x <- matrix(runif(50*2), ncol=2)
+#' g <- spatgraph(x, "knn", par=3)
+#' plot(g, x)
+#'
+#' # big example
+#' xb <- matrix(runif(10000*2), ncol=2)
+#' gb <- spatgraph(xb, "SIG", maxR=0.1)
+#'
 #'
 #' @useDynLib spatgraphs2
 #' @import Rcpp
 #' @export
 
-spatgraph <- function(x, type="geometric", par=NULL, verbose = TRUE,
+spatgraph <- function(x, type="geometric", par=NULL, verbose = FALSE,
                       maxR = 0, doDists=FALSE, preGraph = NULL) {
 
   note <- NULL
@@ -44,20 +59,19 @@ spatgraph <- function(x, type="geometric", par=NULL, verbose = TRUE,
   coord <- sg_parse_coordinates(x, verbose)
 
   # Verify parameters
-  par <- sg_verify_parameters(coords, type, par, maxR, doDists,preGraph)
+  par <- sg_verify_parameters(coord, type, par, maxR, doDists,preGraph)
 
   if(maxR>0) note <- paste("Precalculated geometric graph with R=", maxR, sep="")
 
   if(!is.null(preGraph)) {
-    note<-paste("'preGraph' given (", preGraph$type, ", par=",paste(preGraph$parameters, collapse=","),")",sep="")
+    note<-paste("'preGraph' given (", preGraph$type, ",
+                par=",paste(preGraph$parameters, collapse=","),")",sep="")
   }
-  # clash
-  if(maxR>0 & !is.null(preGraph)) stop("Can not handle both 'maxR' and 'preGraph'.")
 
   typei <- pmatch(type, names(SG_GRAPH_PARAMETERS))
   ###########################
   # compute.
-  edges <- spatgraph_c(coord, typei, as.numeric(par), as.integer(verbose))
+  edges <- spatgraph_c(coord, typei, par, maxR, preGraph, as.integer(verbose))
 
 
   ##########################
