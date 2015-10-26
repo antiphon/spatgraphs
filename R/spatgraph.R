@@ -41,7 +41,7 @@
 #'
 #' # big example
 #' xb <- matrix(runif(10000*2), ncol=2)
-#' gb <- spatgraph(xb, "SIG", maxR=0.1)
+#' gb <- spatgraph(xb, "RNG", maxR=0.1)
 #'
 #'
 #' @useDynLib spatgraphs

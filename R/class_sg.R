@@ -69,7 +69,7 @@ summary.sg<-function(object, ...)
   print(summary(degs))
   if("pp"%in%names(args))
   {
-    l<-edgelengths.sg(object,args$pp)
+    l<-edgeLengths(object,args$pp)
     cat("Edge length stats:\n")
     print(summary(l$d))
   }

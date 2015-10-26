@@ -10,12 +10,14 @@
 #' @param points.pch point styling
 #' @param points.col point styling
 #' @param points.cex point styling
+#' @param max.edges limit of edges to try to plot, gets very slow at high count. default 1e4
 #' @param ... passed to 'lines' function
 #'
 #' @export
 
 plot.sg <- function(x, data, which=NULL, add=FALSE,
                     addPoints = FALSE, points.pch=1, points.col=1, points.cex=1,
+                    max.edges = 1e4,
                     ...) {
   data <- sg_parse_coordinates(data)
 
@@ -31,13 +33,14 @@ plot.sg <- function(x, data, which=NULL, add=FALSE,
     which <- sort(which)
     e <- x$edges[which]
     nl <- sapply(e, length)
-    if(sum(nl)>1e4) stop("can't handle > 10 000 edges.")
-
     ab <- cbind(rep(which, times=nl[which]), unlist(e))
 
     # unique edges
     ok <- !duplicated(t(apply(ab, 1, sort)))
     ab <- ab[ok,]
+    if(sum(ok) > max.edges)
+      stop(paste0("Trying to plot too many edges (", sum(ok),"), increase max.edges to override."))
+
     #
     by_i <- split(data.frame(ab), ab[,1])
     sapply(by_i, function(ab) {
