@@ -13,6 +13,8 @@
 #' @param max.edges limit of edges to try to plot, gets very slow at high count. default 1e4
 #' @param ... passed to 'lines' function
 #'
+#' @importFrom graphics abline axis lines par plot points
+#' @importFrom grDevices rgb
 #' @export
 
 plot.sg <- function(x, data, which=NULL, add=FALSE,
@@ -67,7 +69,8 @@ plot.sg <- function(x, data, which=NULL, add=FALSE,
 #' @param data coordinates
 #' @param which points of which out-edges will be plotted
 #' @param ... passed to rgl.lines
-#' @import rgl
+#'
+#' @importFrom rgl rgl.lines
 #' @export
 plot3.sg <- function(x, data, which, ...) {
 

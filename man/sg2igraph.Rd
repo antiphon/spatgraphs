@@ -4,12 +4,10 @@
 \alias{sg2igraph}
 \title{sg to igraph}
 \usage{
-sg2igraph(g, x = NULL)
+sg2igraph(x)
 }
 \arguments{
-\item{g}{sg object}
-
-\item{x}{point pattern used for computing g}
+\item{x}{sg object}
 }
 \description{
 sg to igraph

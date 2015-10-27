@@ -23,8 +23,9 @@ as.sg <- function(edges=list(), type="?", pars=NULL, note=NULL) {
 #'
 #' @param x object to check
 #'
+#' @importFrom methods is
 #' @export
-is_sg <- function(x) if(!is(x,"sg")) stop("input not of class 'sg'.")
+is_sg <- function(x) if(!is(x, "sg")) stop("input not of class 'sg'.")
 
 
 ###############################################################################
@@ -57,6 +58,7 @@ print.sg<-function(x, ...)
 #' @param ... ignored
 #'
 #' @export
+
 summary.sg<-function(object, ...)
 {
   args<-list(...)

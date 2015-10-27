@@ -10,6 +10,6 @@ Description: Graphs (or networks) and graph component
 License: GPL (>= 2)
 LazyData: TRUE
 Imports:
-    Rcpp (>= 0.11.6), Matrix, rgl
+    Rcpp (>= 0.11.6), Matrix, rgl, methods
 LinkingTo:
     Rcpp

@@ -4,6 +4,7 @@
 #' @param m levels to consider
 #' @param K number of assumed clusters
 #'
+#' @importFrom stats dist kmeans runif
 #' @export
 
 spectral.sg<-function(g, m=2, K=3) {

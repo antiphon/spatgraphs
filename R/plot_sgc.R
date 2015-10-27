@@ -6,6 +6,7 @@
 #' @param col colors for clusters, chosen randomly if missing.
 #' @param ... passed to points
 #'
+#'
 #' @export
 
 plot.sgc<-function(x, data, atleast=2, add=FALSE, col, ...)

@@ -11,7 +11,7 @@ sg_parse_coordinates <- function(x, verbose = FALSE) {
   dunno <- paste("Unable to parse coordinates from input pattern of type:", is(x)[1])
 
   if(is(x, "ppp")){ # if we have spatstat object
-    coord <- as.matrix(coords(x))
+    coord <- cbind(x$x, x$y)
   }
   else if(is(x, "SpatialPoints")) { # if we have sp object
     coord <- as.matrix(x@coords)
