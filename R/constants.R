@@ -1,6 +1,3 @@
-#' Supported graphs constants
-#'
-#'
 SG_GRAPH_PARAMETERS <- list(geometric = list(R="numeric>0"),
                             knn = list(k="integer>0"),
                             mass_geometric=list(mass="numeric vector of sizes"),

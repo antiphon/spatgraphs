@@ -31,6 +31,19 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// remove_nodes_sym_c
+List remove_nodes_sym_c(List edges, IntegerVector set, bool fuse);
+RcppExport SEXP spatgraphs_remove_nodes_sym_c(SEXP edgesSEXP, SEXP setSEXP, SEXP fuseSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< List >::type edges(edgesSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type set(setSEXP);
+    Rcpp::traits::input_parameter< bool >::type fuse(fuseSEXP);
+    __result = Rcpp::wrap(remove_nodes_sym_c(edges, set, fuse));
+    return __result;
+END_RCPP
+}
 // spatcluster_c
 List spatcluster_c(List x, int verbose);
 RcppExport SEXP spatgraphs_spatcluster_c(SEXP xSEXP, SEXP verboseSEXP) {

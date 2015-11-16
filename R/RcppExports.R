@@ -9,6 +9,10 @@ prune_c <- function(edges, level, verbose) {
     .Call('spatgraphs_prune_c', PACKAGE = 'spatgraphs', edges, level, verbose)
 }
 
+remove_nodes_sym_c <- function(edges, set, fuse) {
+    .Call('spatgraphs_remove_nodes_sym_c', PACKAGE = 'spatgraphs', edges, set, fuse)
+}
+
 spatcluster_c <- function(x, verbose) {
     .Call('spatgraphs_spatcluster_c', PACKAGE = 'spatgraphs', x, verbose)
 }

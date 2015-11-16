@@ -47,7 +47,7 @@ sg2sym<-function(x, way=1)
     for(i in 1:length(x$edges) )
       if(length(x$edges[[i]])>0)
         for(j in x$edges[[i]])
-          x$edges[[j]]<-union(i,x$edges[[j]])
+          x$edges[[j]]<-union(i, x$edges[[j]])
         x$symmetric<-TRUE
   }
   else # symmetrisize with AND: remove one direction links
