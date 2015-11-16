@@ -12,7 +12,8 @@
 #' along a path.
 #'
 #' Note: g should be symmetric. use sg2sym to force symmetry, it is not checked.
-#' @example
+#'
+#' @examples
 #'
 #' x <- matrix(runif(200), ncol=2)
 #' g <- spatgraph(x, "RST", c(1,0))
