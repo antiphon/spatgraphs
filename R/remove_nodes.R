@@ -5,7 +5,7 @@
 #' @param g sg object
 #' @param i indices of nodes for which to remove the edges
 #' @param fuse Should the neighours of removed nodes be connected?
-#'
+#' @param verb verbose?
 #' @details
 #' Basically, just clear the neighbourhood of selected indices. If fuse=TRUE,
 #' connect neighbours together (excluding i's). Should work over several remove nodes
@@ -27,25 +27,32 @@
 #'
 #' @export
 
-remove_nodes <- function(g, i, fuse = FALSE) {
+remove_nodes <- function(g, i, fuse = FALSE, verb = FALSE) {
   is_sg(g)
   if(any(!i%in%(1:g$N))) stop( paste0("indices should be between 1 and ", g$N) )
-
+  cat2 <- if(verb) cat else function(...) NULL
   edges <- g$edges
   ii <- i
-  ni <- length(i)
-  for(l in 1:ni) {
+  Ni <- length(i)
+
+  E <- round(Ni/100)
+
+  for(l in 1:Ni) {
     i <- ii[l]
     ni <- edges[[i]]
     for(j in ni){
       edges[[j]] <- setdiff(edges[[j]], i)
-      if(fuse) edges[[j]] <- setdiff( union( edges[[j]], setdiff(ni, ii[1:l]) ), j )
+      if(fuse)
+        edges[[j]] <- setdiff( union( edges[[j]], setdiff(ni, ii[1:l]) ), j )
     }
     edges[[i]] <- integer(0)
+    if(l %% E==0) cat2("     \r", round(100*l/Ni), "%")
   }
+  cat2("\n")
   g$edges <- edges
   g$note <- paste(g$note, "Some nodes have their neighbourhoods cleared", sep="\n")
   g
 }
+
 
 
