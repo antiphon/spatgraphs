@@ -77,6 +77,9 @@ plot3.sg <- function(x, data, which, ...) {
   if(!requireNamespace("rgl", quiet=TRUE)){
     stop("Package 'rgl' needed for 3D plots of sg-objects.")
   }
+  else{
+    liner <- rgl::rgl.lines
+  }
   A <- sg2adj(x)$matrix
 
   n <- ncol(A)
@@ -103,6 +106,6 @@ plot3.sg <- function(x, data, which, ...) {
     x1 <- as.vector( rbind(x0, xo ))
     y1 <- as.vector( rbind(y0, yo ))
     z1 <- as.vector( rbind(z0, zo ))
-    rgl.lines(x1, y1, z1, ... )
+    liner(x1, y1, z1, ... )
   })
 }
