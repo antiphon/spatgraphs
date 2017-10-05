@@ -72,10 +72,11 @@ plot.sg <- function(x, data, which=NULL, add=FALSE,
 #' @param which points of which out-edges will be plotted
 #' @param ... passed to rgl.lines
 #'
-#' @importFrom rgl rgl.lines
 #' @export
 plot3.sg <- function(x, data, which, ...) {
-
+  if(!requireNamespace("rgl", quiet=TRUE)){
+    stop("Package 'rgl' needed for 3D plots of sg-objects.")
+  }
   A <- sg2adj(x)$matrix
 
   n <- ncol(A)

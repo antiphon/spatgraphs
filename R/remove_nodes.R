@@ -1,6 +1,6 @@
 #' Remove edges connected to certain nodes
 #'
-#' Use at your own risk.
+#' Remove the existence of particular nodes from the graph.
 #'
 #' @param g sg object
 #' @param i indices of nodes for which to remove the edges
@@ -13,6 +13,8 @@
 #'
 #' Note: g should be symmetric. use sg2sym to force symmetry, it is not checked.
 #'
+#' Warning: In development.
+#'
 #' @examples
 #'
 #' x <- matrix(runif(200), ncol=2)
@@ -21,9 +23,9 @@
 #' i <- sample(100, 50)
 #' k <- setdiff(1:100, i)
 #' gs <- remove_nodes(g, i, fuse=TRUE)
-#' plot(g,x, add=F)
+#' plot(g,x, add=FALSE)
 #' points(x[k,], pch=19, col=4)
-#' plot(gs, x, add=T, lty=2, col=3)
+#' plot(gs, x, add=TRUE, lty=2, col=3)
 #'
 #' @export
 
@@ -35,8 +37,9 @@ remove_nodes <- function(g, i, fuse = FALSE, verb = FALSE) {
   ii <- i
   Ni <- length(i)
 
-  E <- round(Ni/100)
-
+  E <- max(Ni, round(Ni/100))
+#   timer <- looptimer(n = Ni)
+#   it <- 0
   for(l in 1:Ni) {
     i <- ii[l]
     ni <- edges[[i]]

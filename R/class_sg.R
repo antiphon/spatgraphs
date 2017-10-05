@@ -59,7 +59,6 @@ print.sg<-function(x, ...)
 #' @param ... ignored
 #'
 #' @export
-
 summary.sg<-function(object, ...)
 {
   args<-list(...)
