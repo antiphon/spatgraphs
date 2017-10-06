@@ -17,7 +17,7 @@ class Graph {
   int type;
 
 public:
-  Graph(Pp pp, int type, NumericVector parameters, double);
+  Graph(Pp *pp, int type, NumericVector parameters, double);
   virtual ~Graph();
 
 

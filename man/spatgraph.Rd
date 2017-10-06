@@ -49,7 +49,7 @@ Voronoi diagram aka Delaunay triangulation is not supported as other R-packages 
 see. e.g. package 'deldir'.
 }
 \examples{
-\dontrun{
+
 # basic example
 x <- matrix(runif(50*2), ncol=2)
 g <- spatgraph(x, "knn", par=3)
@@ -58,6 +58,6 @@ plot(g, x)
 # big example
 xb <- matrix(runif(10000*2), ncol=2)
 gb <- spatgraph(xb, "RNG", maxR=0.1)
-}
+
 
 }

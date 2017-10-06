@@ -10,12 +10,12 @@ Graph::~Graph()
 {
 }
 /********************************************************************************************/
-Graph::Graph(Pp pp, int type, NumericVector parameters, double maxR){
-  this->pp = &pp;
+Graph::Graph(Pp *pp, int type, NumericVector parameters, double maxR){
+  this->pp = pp;
   this->type = type;
   this->maxR = maxR;
   par = parameters;
-  edges.resize(pp.size());
+  edges.resize(pp->size());
   edges_set = false;
   dbg = 0;
 }
@@ -130,6 +130,8 @@ void Graph::sg_knn() {
             break;
           }
     }
+  delete[] dists2_i;
+  delete[] dists2_i2;
   if(dbg)Rprintf(" Ok.");
 }
 
@@ -165,21 +167,24 @@ void Graph::sg_sub_knn() {
       dists2_i[l] = dists2_i2[l];
     }
     qsort( dists2_i, edges[i].size() , sizeof(double), compare_doubles); // sort distances, rising
-    for(j=0; j<mink ;j++) // find the k nearest
-      for(l=0;l< (int) edges[i].size();l++)
+    for(j=0; j<mink ;j++){ // find the k nearest
+      for(l=0;l< (int) edges[i].size();l++){
         if( dists2_i[j] == dists2_i2[l] ) //with distance comparison
         {
           node->push_back(edges[i][l]);
           break;
         }
-        edges[i].clear();
-        edges[i].resize(0);
-        for(j=0;j < (int) node->size();j++)
-          edges[i].push_back( node->at(j) );
-        delete node;
-        delete[] dists2_i;
-        delete[] dists2_i2;
+      }
+    }
+    edges[i].clear();
+    edges[i].resize(0);
+    for(j=0;j < (int) node->size();j++)
+      edges[i].push_back( node->at(j) );
+    delete node;
+    delete[] dists2_i;
+    delete[] dists2_i2;
   }
+
   if(dbg)Rprintf(" Ok.");
 }
 
@@ -288,6 +293,8 @@ void Graph::sg_MST()
     left--;
     this->edges[l].push_back(k+1);
   }
+  delete done;
+
   if(dbg)Rprintf(" Ok.");
 }
 

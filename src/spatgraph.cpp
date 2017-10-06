@@ -8,7 +8,7 @@ using namespace Rcpp;
 List spatgraph_c(NumericMatrix coord, int type, NumericVector parameters,
                  double maxR, List preGraph, int verbose) {
   Pp pp(coord);
-  Graph graph(pp, type, parameters, maxR);
+  Graph graph(&pp, type, parameters, maxR);
   graph.setdbg(verbose);
   graph.set_edges(preGraph);
   graph.sg_calc();
