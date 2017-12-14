@@ -1,16 +1,17 @@
 #' spectral clustering
 #'
-#' @param g sg object. Should be weighted (with weight.sg-function)
+#' @param g sg object. Should be weighted (with weight_sg-function)
 #' @param m levels to consider
 #' @param K number of assumed clusters
 #'
 #' @importFrom stats dist kmeans runif
+#' @exportClass sgspectral
 #' @export
 
-spectral.sg<-function(g, m=2, K=3) {
+spectral_sg<-function(g, m=2, K=3) {
 
   if(!is(g, "sg")) stop("g not of class sg.")
-  if(is.null(g$weights)) stop("No weights in x. Run weight.sg-function.")
+  if(is.null(g$weights)) stop("No weights in x. Run weight_sg-function.")
 
   W <- sg2wadj(g)$matrix
   G <- diag(rowSums(W))
@@ -34,7 +35,7 @@ spectral.sg<-function(g, m=2, K=3) {
 
 #' plot spectral clustering results
 #'
-#' @param x spectral.sg result
+#' @param x spectral_sg result
 #' @param data point pattern
 #' @param ... ignored
 #'

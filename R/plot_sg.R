@@ -61,7 +61,7 @@ plot.sg <- function(x, data, which=NULL, add=FALSE,
       points(data[,1], data[,2], pch=points.pch, col=points.col, cex=points.cex)
   }
   #
-  if(ncol(data) == 3) null <- plot3.sg(x, data, which, ...)
+  if(ncol(data) == 3) null <- plot3_sg(x, data, which, ...)
   if(ncol(data)>3) stop("Plot only for 2 or 23D.")
 
 }
@@ -73,7 +73,7 @@ plot.sg <- function(x, data, which=NULL, add=FALSE,
 #' @param ... passed to rgl.lines
 #'
 #' @export
-plot3.sg <- function(x, data, which, ...) {
+plot3_sg <- function(x, data, which, ...) {
   if(!requireNamespace("rgl", quiet=TRUE)){
     stop("Package 'rgl' needed for 3D plots of sg-objects.")
   }

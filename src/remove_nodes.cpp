@@ -5,12 +5,11 @@ using namespace Rcpp;
 
 // [[Rcpp::export]]
 List remove_nodes_sym_c(List edges, IntegerVector set, bool fuse) {
-  std::vector<int> onode, *nnode;
+  std::vector<int> onode;
   std::vector< std::vector<int> > newedges;
 
-  int i,j,k,l;
+  int i,j,k;
 
-  int nout = set.length();
 
   for(i=0; i < set.size(); i++){
     j = set(i)-1;

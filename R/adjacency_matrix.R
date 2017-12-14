@@ -24,7 +24,7 @@ t.sg<-function(x)
 #' @param x sgadj object
 #'
 #' @export
-
+#' @exportClass sgadj
 t.sgadj<-function(x)
 {
   x$matrix<-t(x$matrix)
@@ -123,19 +123,6 @@ adj2sg<-function(x)
   as.sg(A, type=x$type, pars=x$parameters, note = "from sgadj-object" )
 }
 
-# ##############################################################################
-# ## what is this...
-# sg2wadj<-function(x)
-# {
-#   verifyclass(x,"sg")
-#   if(is.null(x$weights)) stop("No weights. Run weight.sg(x,...) .")
-#   W<-diag(0,x$N)
-#   for(i in 1:x$N)
-#   {
-#     W[i,x$edges[[i]]]<-x$weights[[i]]
-#   }
-#   sgadj(W, type=x$type, pars=x$parameters, sym=x$symmetric, other="weighted")
-# }
 ##############################################################################
 #' Creator for sgadj-class
 #' @param edges edge list-of-lists
@@ -198,7 +185,7 @@ plot.sgadj<-function(x, ...)
 sg2wadj<-function(x)
 {
   is_sg(x)
-  if(is.null(x$weights)) stop("No weights. Run weight.sg(x,...) .")
+  if(is.null(x$weights)) stop("No weights. Run weight_sg(x,...) .")
   W<-diag(0,x$N)
   for(i in 1:x$N)
   {

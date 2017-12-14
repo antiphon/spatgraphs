@@ -10,9 +10,11 @@
 #'
 #' @details
 #' Default f(x) = exp(-x^2/scale)
+#'
+#'
 #' @export
 
-weight.sg<-function(g, x, f=function(x)exp(-x^2/scale), scale=1, ...) {
+weight_sg<-function(g, x, f=function(x)exp(-x^2/scale), scale=1, ...) {
   if(!is(g, "sg")) stop("g not an sg object.")
   D<-as.matrix(dist(sg_parse_coordinates(x), upper=T, diag=T))
   W<-f(D)

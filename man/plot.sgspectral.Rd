@@ -7,7 +7,7 @@
 \method{plot}{sgspectral}(x, data, ...)
 }
 \arguments{
-\item{x}{spectral.sg result}
+\item{x}{spectral_sg result}
 
 \item{data}{point pattern}
 

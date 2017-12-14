@@ -40,14 +40,14 @@
 #' g <- spatgraph(x, "knn", par=3)
 #' plot(g, x)
 #'
-#' # big example
-#' xb <- matrix(runif(10000*2), ncol=2)
+#' # bigger example
+#' xb <- matrix(runif(5000*2), ncol=2)
 #' gb <- spatgraph(xb, "RNG", maxR=0.1)
-#'
 #'
 #' @useDynLib spatgraphs
 #' @import Rcpp
 #' @export
+#' @exportClass sg
 
 spatgraph <- function(x, type="geometric", par=NULL, verbose = FALSE,
                       maxR = 0, doDists=FALSE, preGraph = NULL) {

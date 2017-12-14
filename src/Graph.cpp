@@ -293,7 +293,7 @@ void Graph::sg_MST()
     left--;
     this->edges[l].push_back(k+1);
   }
-  delete done;
+  delete[] done;
 
   if(dbg)Rprintf(" Ok.");
 }
