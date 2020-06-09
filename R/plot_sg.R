@@ -16,7 +16,6 @@
 #' @importFrom graphics abline axis lines par plot points
 #' @importFrom grDevices rgb
 #' @export
-
 plot.sg <- function(x, data, which=NULL, add=FALSE,
                     addPoints = FALSE, points.pch=1, points.col=1, points.cex=1,
                     max.edges = 1e4,

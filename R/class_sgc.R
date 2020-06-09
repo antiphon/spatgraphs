@@ -6,7 +6,6 @@
 #' @param note notes
 #'
 #' @export
-#' @exportClass sgc
 as.sgc<-function(clusters, type="?",pars=NULL,note=NULL)
 {
   e <- as.sg(clusters, type, pars, note)

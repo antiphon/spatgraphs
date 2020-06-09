@@ -24,7 +24,6 @@ t.sg<-function(x)
 #' @param x sgadj object
 #'
 #' @export
-#' @exportClass sgadj
 t.sgadj<-function(x)
 {
   x$matrix<-t(x$matrix)

@@ -47,8 +47,6 @@
 #' @useDynLib spatgraphs
 #' @import Rcpp
 #' @export
-#' @exportClass sg
-
 spatgraph <- function(x, type="geometric", par=NULL, verbose = FALSE,
                       maxR = 0, doDists=FALSE, preGraph = NULL) {
 

@@ -4,9 +4,18 @@
 \alias{plot.sg}
 \title{Plot a spatial graph}
 \usage{
-\method{plot}{sg}(x, data, which = NULL, add = FALSE, addPoints = FALSE,
-  points.pch = 1, points.col = 1, points.cex = 1, max.edges = 10000,
-  ...)
+\method{plot}{sg}(
+  x,
+  data,
+  which = NULL,
+  add = FALSE,
+  addPoints = FALSE,
+  points.pch = 1,
+  points.col = 1,
+  points.cex = 1,
+  max.edges = 10000,
+  ...
+)
 }
 \arguments{
 \item{x}{an 'sg' graph object}

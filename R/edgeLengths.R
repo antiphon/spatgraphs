@@ -1,13 +1,12 @@
 #' Edge lengths
 #'
-#'
 #' @param g sg-object
 #' @param x point pattern
 #' @param ... ignored
-
+#'
 #' @export
 
-edgeLengths<-function(g, x, ...)
+edgeLengths <- function(g, x, ...)
 {
   if(missing(x)) stop("Need 'x' for distances.")
   if(!is(g, "sg")) stop("Give sg object, from spatgraph-function.")
@@ -28,7 +27,6 @@ edgeLengths<-function(g, x, ...)
       g$edges[[j]]<-setdiff(g$edges[[j]], i)
     }
   }
-
   res$i<-ivec
   res$j<-jvec
   res$d<-dvec

@@ -29,16 +29,19 @@ as.sg <- function(edges=list(), type="?", pars=NULL, note=NULL) {
 is_sg <- function(x) if(!is(x, "sg")) stop("input not of class 'sg'.")
 
 
-###############################################################################
-#' print method for sg
+
+#' Print method for sg
+#'
+#' Print sg class.
 #'
 #' @param x sg object
 #' @param ... ignored
 #'
+#' @details Print basic info.
+#'
 #' @export
 
-print.sg<-function(x, ...)
-{
+print.sg <- function(x, ...) {
   nam <- names(x$parameters)
   p<-"?"
   p<-paste(", par=(",paste(x$parameters,collapse=","),")",sep="")
@@ -48,7 +51,6 @@ print.sg<-function(x, ...)
 
   if(!is.null(x$note))
     cat(paste("Note: ", x$note,".\n", sep=""))
-
 }
 
 

@@ -4,8 +4,15 @@
 \alias{spatgraph}
 \title{Compute the edges of a spatial graph}
 \usage{
-spatgraph(x, type = "geometric", par = NULL, verbose = FALSE, maxR = 0,
-  doDists = FALSE, preGraph = NULL)
+spatgraph(
+  x,
+  type = "geometric",
+  par = NULL,
+  verbose = FALSE,
+  maxR = 0,
+  doDists = FALSE,
+  preGraph = NULL
+)
 }
 \arguments{
 \item{x}{Input point pattern object}
