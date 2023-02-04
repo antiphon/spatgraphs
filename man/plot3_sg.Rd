@@ -13,7 +13,7 @@ plot3_sg(x, data, which, ...)
 
 \item{which}{points of which out-edges will be plotted}
 
-\item{...}{passed to rgl.lines}
+\item{...}{passed to segments3d}
 }
 \description{
 Plot 3d graph
