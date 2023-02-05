@@ -4,7 +4,7 @@
 \alias{summary.sgc}
 \title{sgc summary}
 \usage{
-\method{summary}{sgc}(object, ...)
+summary.sgc(object, ...)
 }
 \arguments{
 \item{object}{sgc object}

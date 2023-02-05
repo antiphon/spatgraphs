@@ -4,7 +4,7 @@
 \alias{summary.sg}
 \title{sg summary}
 \usage{
-\method{summary}{sg}(object, ...)
+summary.sg(object, ...)
 }
 \arguments{
 \item{object}{sg object}

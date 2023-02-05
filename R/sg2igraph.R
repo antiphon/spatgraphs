@@ -1,6 +1,8 @@
 #' sg to igraph
 #'
-#' @param x sg object
+#' @param g sg object
+#' @param x possibly the location pattern
+#' @param ... not used
 #'
 #' @export
 

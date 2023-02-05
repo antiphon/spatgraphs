@@ -4,7 +4,7 @@
 \alias{t.sgadj}
 \title{Transpose sgadj object}
 \usage{
-\method{t}{sgadj}(x)
+t.sgadj(x)
 }
 \arguments{
 \item{x}{sgadj object}

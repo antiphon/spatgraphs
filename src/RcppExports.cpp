@@ -5,6 +5,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // cut_c
 List cut_c(List edges, NumericMatrix coord, double R);
 RcppExport SEXP _spatgraphs_cut_c(SEXP edgesSEXP, SEXP coordSEXP, SEXP RSEXP) {
