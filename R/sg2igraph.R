@@ -1,15 +1,24 @@
 #' sg to igraph
 #'
+#' Obsolete. Use igraph::graph_from_adj_list on the graph edges element.
 #' @param g sg object
 #' @param x possibly the location pattern
 #' @param ... not used
 #'
+#' Not implemented. You can use the 'graph_from_adj_list'-function in 'igraph'-package on the edges-element of the graph.
+#'
+#' @examples
+#' \dontrun{
+#' ix <- igraph::graph_from_adj_list(x$edges)
+#' }
+#'
 #' @export
 
 sg2igraph <- function(g, x, ...) {
-  warning("Not implemented properly. You can use the 'graph_from_adj_list'-function in 'igraph'-package on the edges-element of the graph.\n Example: graph_from_adj_list(x$edges)")
-  z <- graph_from_adj_list(g$edges)
-  z
+  warning("Not implemented properly. You can use the 'graph_from_adj_list'-function in 'igraph'-package on the edges-element of the graph.\n Example: igraph::graph_from_adj_list(x$edges)")
+  NULL
+  #z <- graph_from_adj_list(g$edges)
+  #z
 }
 
 # sg2igraph<-function(g, x=NULL)

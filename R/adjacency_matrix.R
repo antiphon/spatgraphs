@@ -67,7 +67,7 @@ sg2sym<-function(x, way=1)
 #'
 #' @param x sg-object
 #'
-#' @import Matrix
+#' @importFrom Matrix sparseMatrix
 #' @export
 
 sg2sparse<-function(x) {

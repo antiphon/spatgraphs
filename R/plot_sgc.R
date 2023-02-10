@@ -24,5 +24,4 @@ plot.sgc<-function(x, data, atleast=2, add=FALSE, col, ...)
       }
   }
   else stop("Plotting of clusters only in 2D")
-
 }

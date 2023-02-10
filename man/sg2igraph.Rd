@@ -11,8 +11,16 @@ sg2igraph(g, x, ...)
 
 \item{x}{possibly the location pattern}
 
-\item{...}{not used}
+\item{...}{not used
+
+Not implemented. You can use the 'graph_from_adj_list'-function in 'igraph'-package on the edges-element of the graph.}
 }
 \description{
-sg to igraph
+Obsolete. Use igraph::graph_from_adj_list on the graph edges element.
+}
+\examples{
+\dontrun{
+ix <- igraph::graph_from_adj_list(x$edges)
+}
+
 }
