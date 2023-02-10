@@ -4,8 +4,10 @@
 #'
 #' @export
 
-sg2igraph <- function(x) {
-  stop("Not implemented. You can use the 'graph_from_adj_list'-function in 'igraph'-package on the edges-element of the graph.\n Example: graph_from_adj_list(x$edges)")
+sg2igraph <- function(g, x, ...) {
+  warning("Not implemented properly. You can use the 'graph_from_adj_list'-function in 'igraph'-package on the edges-element of the graph.\n Example: graph_from_adj_list(x$edges)")
+  z <- graph_from_adj_list(g$edges)
+  z
 }
 
 # sg2igraph<-function(g, x=NULL)
