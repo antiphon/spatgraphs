@@ -4,7 +4,7 @@
 \alias{print.sgadj}
 \title{print method for sgadj}
 \usage{
-\method{print}{sgadj}(x, ...)
+print.sgadj(x, ...)
 }
 \arguments{
 \item{x}{sgadj object}

@@ -4,7 +4,7 @@
 \alias{print.sg}
 \title{Print method for sg}
 \usage{
-\method{print}{sg}(x, ...)
+print.sg(x, ...)
 }
 \arguments{
 \item{x}{sg object}

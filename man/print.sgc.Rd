@@ -4,7 +4,7 @@
 \alias{print.sgc}
 \title{sgc print method}
 \usage{
-\method{print}{sgc}(x, ...)
+print.sgc(x, ...)
 }
 \arguments{
 \item{x}{sgc object}

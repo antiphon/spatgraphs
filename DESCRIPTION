@@ -1,8 +1,8 @@
 Package: spatgraphs
 Type: Package
 Title: Graph Edge Computations for Spatial Point Patterns
-Version: 3.2-2
-Date: 2020-06-08
+Version: 3.3-0
+Date: 2023-02-04
 Author: Tuomas Rajala
 Maintainer: Tuomas Rajala <tuomas.rajala@iki.fi>
 Description: Graphs (or networks) and graph component
@@ -15,5 +15,5 @@ Suggests:
     rgl
 LinkingTo:
     Rcpp
-RoxygenNote: 7.1.0
+RoxygenNote: 7.2.3
 Encoding: UTF-8

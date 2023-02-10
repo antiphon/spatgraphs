@@ -69,7 +69,7 @@ plot.sg <- function(x, data, which=NULL, add=FALSE,
 #' @param x sg object
 #' @param data coordinates
 #' @param which points of which out-edges will be plotted
-#' @param ... passed to rgl.lines
+#' @param ... passed to segments3d
 #'
 #' @export
 plot3_sg <- function(x, data, which, ...) {
@@ -77,7 +77,7 @@ plot3_sg <- function(x, data, which, ...) {
     stop("Package 'rgl' needed for 3D plots of sg-objects.")
   }
   else{
-    liner <- rgl::rgl.lines
+    liner <- rgl::segments3d
   }
   A <- sg2adj(x)$matrix
 
