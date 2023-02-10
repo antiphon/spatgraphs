@@ -8,7 +8,6 @@ Maintainer: Tuomas Rajala <tuomas.rajala@iki.fi>
 Description: Graphs (or networks) and graph component
         calculations for spatial locations in 1D, 2D, 3D etc.
 License: GPL (>= 2)
-LazyData: TRUE
 Imports:
     Rcpp (>= 0.11.6), Matrix, methods
 Suggests:
