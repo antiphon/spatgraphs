@@ -4,7 +4,7 @@
 \alias{spatcluster}
 \title{Compute the connected components of a graph}
 \usage{
-spatcluster(x, verbose = TRUE, sym = FALSE)
+spatcluster(x, verbose = FALSE, sym = FALSE)
 }
 \arguments{
 \item{x}{sg-object}

@@ -24,8 +24,8 @@ shortestPath<-function(i, j, g, x=NULL, dbg=FALSE)
 
   if(!(j%in%e$clusters[[k]])) return(list(d=Inf, path=NA));
 
-  if(is.null(x)) d<-matrix(1, g$N, g$N) - diag(g$N)
-  else d <- as.matrix(dist(sg_parse_coordinates(x),upper=TRUE))
+  if(is.null(x)) d <- matrix(1, g$N, g$N) - diag(g$N)
+  else d <- as.matrix(dist(sg_parse_coordinates(x), upper=TRUE))
 
   cluster<-e$clusters[[k]]
 

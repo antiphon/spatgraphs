@@ -6,7 +6,7 @@
 #'
 #' @export
 
-spatcluster <- function(x, verbose=TRUE, sym =FALSE){
+spatcluster <- function(x, verbose = FALSE, sym = FALSE){
   if(sym) x<-sg2sym(x)
 
   clusters<- spatcluster_c(x$edges, verbose)
