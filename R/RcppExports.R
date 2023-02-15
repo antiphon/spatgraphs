@@ -13,6 +13,10 @@ remove_nodes_sym_c <- function(edges, set, fuse) {
     .Call('_spatgraphs_remove_nodes_sym_c', PACKAGE = 'spatgraphs', edges, set, fuse)
 }
 
+shortestPath_to_many_djikstra_c <- function(from, to_vec, edges, coords) {
+    .Call('_spatgraphs_shortestPath_to_many_djikstra_c', PACKAGE = 'spatgraphs', from, to_vec, edges, coords)
+}
+
 spatcluster_c <- function(x, verbose) {
     .Call('_spatgraphs_spatcluster_c', PACKAGE = 'spatgraphs', x, verbose)
 }

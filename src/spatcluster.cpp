@@ -3,7 +3,6 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-
 List spatcluster_c(List x, int verbose) {
   std::vector<std::vector<int> > nodelist(x.size()), clustlist;
   // convert to vector

@@ -49,6 +49,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// shortestPath_to_many_djikstra_c
+List shortestPath_to_many_djikstra_c(int from, IntegerVector to_vec, List edges, NumericMatrix coords);
+RcppExport SEXP _spatgraphs_shortestPath_to_many_djikstra_c(SEXP fromSEXP, SEXP to_vecSEXP, SEXP edgesSEXP, SEXP coordsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type from(fromSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type to_vec(to_vecSEXP);
+    Rcpp::traits::input_parameter< List >::type edges(edgesSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type coords(coordsSEXP);
+    rcpp_result_gen = Rcpp::wrap(shortestPath_to_many_djikstra_c(from, to_vec, edges, coords));
+    return rcpp_result_gen;
+END_RCPP
+}
 // spatcluster_c
 List spatcluster_c(List x, int verbose);
 RcppExport SEXP _spatgraphs_spatcluster_c(SEXP xSEXP, SEXP verboseSEXP) {
@@ -82,6 +96,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_spatgraphs_cut_c", (DL_FUNC) &_spatgraphs_cut_c, 3},
     {"_spatgraphs_prune_c", (DL_FUNC) &_spatgraphs_prune_c, 3},
     {"_spatgraphs_remove_nodes_sym_c", (DL_FUNC) &_spatgraphs_remove_nodes_sym_c, 3},
+    {"_spatgraphs_shortestPath_to_many_djikstra_c", (DL_FUNC) &_spatgraphs_shortestPath_to_many_djikstra_c, 4},
     {"_spatgraphs_spatcluster_c", (DL_FUNC) &_spatgraphs_spatcluster_c, 2},
     {"_spatgraphs_spatgraph_c", (DL_FUNC) &_spatgraphs_spatgraph_c, 6},
     {NULL, NULL, 0}
