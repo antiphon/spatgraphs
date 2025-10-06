@@ -40,7 +40,7 @@ List shortestPath_to_many_djikstra_c(int from,
   for(i = 0; i < clusters.size(); i++) {
     cluster = clusters(i);
     for(j = 0; j < cluster.size(); j++) {
-      if(cluster(j) == from) {
+      if(int(cluster(j)) == from) {
         found = true;
         break;
       }
@@ -62,7 +62,7 @@ List shortestPath_to_many_djikstra_c(int from,
     // is target in the same place
     found = false;
     for(i = 0; i < cluster.size(); i++){
-      if(cluster(i) == to)
+      if(int(cluster(i)) == to)
       {
         found = true;
         break;
@@ -95,7 +95,7 @@ List shortestPath_to_many_djikstra_c(int from,
     double dx, alt;
 
     // index of starting node
-    for(j = 0;; j++) if(cluster(j) == from) break;
+    for(j = 0;; j++) if(int(cluster(j)) == from) break;
     dists(j) = 0;
 
     h = 0;
@@ -115,7 +115,7 @@ List shortestPath_to_many_djikstra_c(int from,
           v = neighs(i);
           alt = dists(uu) + dfun(u-1, v-1, coords);
           // index of neighbour in cluster list
-          for(j = 0; j < nc; j++) if(cluster(j) == v) break;
+          for(j = 0; j < nc; j++) if(int(cluster(j)) == v) break;
           vv = j;
           if(alt < dists(vv)) {
             dists(vv)    = alt;
@@ -130,7 +130,7 @@ List shortestPath_to_many_djikstra_c(int from,
 
     //  return(previous);
     // reverse travel the path
-    for(j = 0;; j++) if( cluster(j) == to ) break;
+    for(j = 0;; j++) if( int(cluster(j)) == to ) break;
     vv = j;
     std::vector<int> path;
     while(  previous(vv) > -1 ) {
