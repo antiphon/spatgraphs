@@ -15,4 +15,6 @@ Suggests:
 LinkingTo:
     Rcpp
 RoxygenNote: 7.2.3
+URL: https://github.com/antiphon/spatgraphs
+BugReports: https://github.com/antiphon/spatgraphs/issues
 Encoding: UTF-8
