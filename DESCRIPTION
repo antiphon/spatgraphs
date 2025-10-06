@@ -14,7 +14,7 @@ Suggests:
     rgl
 LinkingTo:
     Rcpp
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 URL: https://github.com/antiphon/spatgraphs
 BugReports: https://github.com/antiphon/spatgraphs/issues
 Encoding: UTF-8

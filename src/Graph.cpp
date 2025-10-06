@@ -61,7 +61,10 @@ void Graph::sg_calc()
     edges_set = true;
   }
   //start the calculation
-       if(type == 1) sg_geometric();
+       if(type == 1){
+         if(edges_set) sg_sub_geometric(par[0]);
+         else sg_geometric();
+       }
   else if(type == 2) {
       if(edges_set) sg_sub_knn();
       else sg_knn();
@@ -103,6 +106,26 @@ void Graph::sg_geometric(double R)
       }
     }
     if(dbg)Rprintf(" Ok.");
+}
+/********************************************************************************************/
+void Graph::sg_sub_geometric(double R)
+{
+  if(dbg)Rprintf("geometric (R=%f, cutting): ", R);
+  int i,j,k;
+  std::vector<int> *nnode;
+
+  for(i=0; i < pp->size(); i++) {
+    nnode = new std::vector<int>;
+    for(j=0; j < edges.at(i).size(); j++) {
+      k = edges.at(i).at(j)-1;
+      if(pp->getDist(&i, &k) < R) {
+        nnode->push_back(k+1);
+      }
+    }
+    edges[i].swap(*nnode);
+    delete nnode;
+  }
+  if(dbg)Rprintf(" Ok.");
 }
 
 /********************************************************************************************/

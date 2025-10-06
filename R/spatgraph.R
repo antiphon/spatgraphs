@@ -8,7 +8,7 @@
 #' @param verbose Print details
 #' @param maxR Maximum range for edges, helps in large patterns.
 #' @param doDists Precompute distances? Speeds up some graphs, takes up memory.
-#' @param preGraph Precomputed graph, taken as a super-graph
+#' @param preGraph Precomputed graph, taken as a super-graph (compatible: geo, knn, rng)
 #'
 #' @details
 #' Several edge definitions are supported:
@@ -63,8 +63,8 @@ spatgraph <- function(x, type="geometric", par=NULL, verbose = FALSE,
   if(maxR>0) note <- paste("Precalculated geometric graph with R=", maxR, sep="")
 
   if(!is.null(preGraph)) {
-    note<-paste("'preGraph' given (", preGraph$type, ",
-                par=",paste(preGraph$parameters, collapse=","),")",sep="")
+    note <- paste("'preGraph' given (", preGraph$type, ",
+                  par=",paste(preGraph$parameters, collapse=","),")",sep="")
   }
 
   typei <- pmatch(type, names(SG_GRAPH_PARAMETERS))

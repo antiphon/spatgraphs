@@ -27,7 +27,7 @@ spatgraph(
 
 \item{doDists}{Precompute distances? Speeds up some graphs, takes up memory.}
 
-\item{preGraph}{Precomputed graph, taken as a super-graph}
+\item{preGraph}{Precomputed graph, taken as a super-graph (compatible: geo, knn, rng)}
 }
 \description{
 Given a spatial point pattern, we compute the edges of a graph (network) for a specified type of edge relationship.

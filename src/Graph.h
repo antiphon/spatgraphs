@@ -29,6 +29,7 @@ public:
 
   void sg_geometric();
   void sg_geometric(double );
+  void sg_sub_geometric(double );
   void sg_knn();
   void sg_sub_knn();
   void sg_mass_geometric();
